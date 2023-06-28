@@ -1,0 +1,1 @@
+.fitnessCentra | map(select(.kapacitaFitnessCentrum > 200)) | map({"Název fitness centra": .nazevFitnessCentrum.cs, "Kapacita fitness centra": .kapacitaFitnessCentrum})

@@ -1,0 +1,290 @@
+{
+  "@context": {
+    "@vocab": "http://example.org/vocabulary/",
+    "ex": "http://example.org/vocabulary/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "iri": "@id",
+    "type": "@type",
+    "jmenoClen": {
+      "@id": "ex:jmenoClen",
+      "@type": "rdf:Property",
+      "@container": "@language"
+    },
+    "osobniCisloClen": {
+      "@id": "ex:osobniCisloClen",
+      "@type": "xsd:integer"
+    },
+    "emailyClen": "@nest",
+    "emailClen": {
+      "@id": "ex:emailClen",
+      "@type": "rdf:Property",
+      "@container": "@language"
+    },
+    "nazevFitnessCentrum": {
+      "@id": "ex:nazevFitnessCentrum",
+      "@type": "rdf:Property",
+      "@container": "@language"
+    },
+    "kapacitaFitnessCentrum": {
+      "@id": "ex:kapacita",
+      "@type": "xsd:integer"
+    },
+    "mestoAdresa": {
+      "@id": "ex:mesto",
+      "@type": "rdf:Property",
+      "@container": "@language"
+    },
+    "uliceAdresa": {
+      "@id": "ex:ulice",
+      "@type": "rdf:Property",
+      "@container": "@language"
+    },
+    "pscAdresa": {
+      "@id": "ex:psc",
+      "@type": "xsd:integer"
+    },
+    "cisloPopisneAdresa": {
+      "@id": "ex:cislo_popisne",
+      "@type": "xsd:integer"
+    },
+    "naAdrese": {
+      "@id": "ex:naAdrese"
+    },
+    "jeClenem": {
+      "@id": "ex:jeClenem"
+    }
+  },
+  "adresy": [
+    {
+      "type": "ex:Adresa",
+      "iri": "https://example.org/adresa/praha1",
+      "mestoAdresa": {
+        "cs": "Praha"
+      },
+      "uliceAdresa": {
+        "cs": "Hradecká"
+      },
+      "pscAdresa": 10001,
+      "cisloPopisneAdresa": 99
+    },
+    {
+      "type": "ex:Adresa",
+      "iri": "https://example.org/adresa/praha2",
+      "mestoAdresa": {
+        "cs": "Praha"
+      },
+      "uliceAdresa": {
+        "cs": "Pražská"
+      },
+      "pscAdresa": 10099,
+      "cisloPopisneAdresa": 876
+    },
+    {
+      "type": "ex:Adresa",
+      "iri": "https://example.org/adresa/hradec",
+      "mestoAdresa": {
+        "cs": "Hradec Králové"
+      },
+      "uliceAdresa": {
+        "cs": "Nádražní"
+      },
+      "pscAdresa": 55506,
+      "cisloPopisneAdresa": 1123
+    },
+    {
+      "type": "ex:Adresa",
+      "iri": "https://example.org/adresa/pardubice",
+      "mestoAdresa": {
+        "cs": "Pardubice"
+      },
+      "uliceAdresa": {
+        "cs": "Pardubická"
+      },
+      "pscAdresa": 50802,
+      "cisloPopisneAdresa": 9623
+    }
+  ],
+  "fitnessCentra": [
+    {
+      "type": "ex:FtnessCentrum",
+      "iri": "https://example.org/fitnessCentrum/beastFitness",
+      "nazevFitnessCentrum": {
+        "cs": "Beast Fitness"
+      },
+      "kapacitaFitnessCentrum": 300,
+      "naAdrese": {
+        "iri": "https://example.org/adresa/praha1"
+      }
+    },
+    {
+      "type": "ex:FtnessCentrum",
+      "iri": "https://example.org/fitnessCentrum/olympiaFitness",
+      "nazevFitnessCentrum": {
+        "cs": "Olympia Fitness"
+      },
+      "kapacitaFitnessCentrum": 400,
+      "naAdrese": {
+        "iri": "https://example.org/adresa/praha2"
+      }
+    },
+    {
+      "type": "ex:FtnessCentrum",
+      "iri": "https://example.org/fitnessCentrum/strongGym",
+      "nazevFitnessCentrum": {
+        "cs": "Strongman Gym HK"
+      },
+      "kapacitaFitnessCentrum": 150,
+      "naAdrese": {
+        "iri": "https://example.org/adresa/hradec"
+      }
+    },
+    {
+      "type": "ex:FtnessCentrum",
+      "iri": "https://example.org/fitnessCentrum/powerliftingGym",
+      "nazevFitnessCentrum": {
+        "cs": "Powerlifting Club Pardubice"
+      },
+      "kapacitaFitnessCentrum": 50,
+      "naAdrese": {
+        "iri": "https://example.org/adresa/pardubice"
+      }
+    }
+  ],
+  "clenove": [
+    {
+      "type": "ex:Clen",
+      "iri": "https://example.org/clen/Radek",
+      "jmenoClen": {
+        "cs": "Radek Pospisil"
+      },
+      "osobniCisloClen": 123456123,
+      "jeClenem": [
+        {
+          "iri": "https://example.org/fitnessCentrum/beastFitness"
+        }
+      ]
+    },
+    {
+      "type": "ex:Clen",
+      "iri": "https://example.org/clen/Pepa",
+      "jmenoClen": {
+        "cs": "Josef Novák"
+      },
+      "osobniCisloClen": 999888764,
+      "emaily": [
+        {
+          "email": {
+            "cs": "novak@seznam.cz"
+          }
+        },
+        {
+          "email": {
+            "cs": "pepa.novak.2@gmail.com"
+          }
+        }
+      ],
+      "jeClenem": [
+        {
+          "iri": "https://example.org/fitnessCentrum/beastFitness"
+        },
+        {
+          "iri": "https://example.org/fitnessCentrum/strongGym"
+        },
+        {
+          "iri": "https://example.org/fitnessCentrum/olympiaFitness"
+        },
+        {
+          "iri": "https://example.org/fitnessCentrum/powerliftingGym"
+        }
+      ]
+    },
+    {
+      "type": "ex:Clen",
+      "iri": "https://example.org/clen/David",
+      "jmenoClen": {
+        "cs": "David Hrdý"
+      },
+      "emaily": [
+        {
+          "email": {
+            "cs": "hrdý@email.cz"
+          }
+        }
+      ],
+      "osobniCisloClen": 123456789,
+      "jeClenem": [
+        {
+          "iri": "https://example.org/fitnessCentrum/strongGym"
+        }
+      ]
+    },
+    {
+      "type": "ex:Clen",
+      "iri": "https://example.org/clen/Kuba",
+      "jmenoClen": {
+        "cs": "Jakub Polévka"
+      },
+      "emaily": [
+        {
+          "email": {
+            "cs": "polevka@test.cz"
+          }
+        }
+      ],
+      "osobniCisloClen": 6565656565,
+      "jeClenem": [
+        {
+          "iri": "https://example.org/fitnessCentrum/olympiaFitness"
+        }
+      ]
+    },
+    {
+      "type": "ex:Clen",
+      "iri": "https://example.org/clen/Eva",
+      "jmenoClen": {
+        "cs": "Eva Morávková"
+      },
+      "emaily": [
+        {
+          "email": {
+            "cs": "eva.m@test.cz"
+          }
+        }
+      ],
+      "osobniCisloClen": 876876876,
+      "jeClenem": [
+        {
+          "iri": "https://example.org/fitnessCentrum/beastFitness"
+        },
+        {
+          "iri": "https://example.org/fitnessCentrum/olympiaFitness"
+        }
+      ]
+    },
+    {
+      "type": "ex:Clen",
+      "iri": "https://example.org/clen/Milos",
+      "jmenoClen": {
+        "cs": "Miloš Nový"
+      },
+      "emaily": [
+        {
+          "email": {
+            "cs": "minovym@test.cz"
+          }
+        }
+      ],
+      "osobniCisloClen": 999111999,
+      "jeClenem": [
+        {
+          "iri": "https://example.org/fitnessCentrum/powerliftingGym"
+        },
+        {
+          "iri": "https://example.org/fitnessCentrum/olympiaFitness"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+@prefix ns0: <http://example.org/vocabulary/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://example.org/adresa/praha1>
+  a <http://example.org/vocabulary/Adresa> ;
+  ns0:cislo_popisne 99 ;
+  ns0:mesto "Praha"@cs ;
+  ns0:psc 10001 ;
+  ns0:ulice "Hradecká"@cs .
+
+<https://example.org/adresa/praha2>
+  a ns0:Adresa ;
+  ns0:cislo_popisne 876 ;
+  ns0:mesto "Praha"@cs ;
+  ns0:psc 10099 ;
+  ns0:ulice "Pražská"@cs .
+
+<https://example.org/adresa/hradec>
+  a ns0:Adresa ;
+  ns0:cislo_popisne 1123 ;
+  ns0:mesto "Hradec Králové"@cs ;
+  ns0:psc 55506 ;
+  ns0:ulice "Nádražní"@cs .
+
+<https://example.org/adresa/pardubice>
+  a ns0:Adresa ;
+  ns0:cislo_popisne 9623 ;
+  ns0:mesto "Pardubice"@cs ;
+  ns0:psc 50802 ;
+  ns0:ulice "Pardubická"@cs .
+
+<https://example.org/clen/Radek>
+  a ns0:Clen ;
+  ns0:jeClenem <https://example.org/fitnessCentrum/beastFitness> ;
+  ns0:jmenoClen "Radek Pospisil"@cs ;
+  ns0:osobniCisloClen 123456123 .
+
+<https://example.org/fitnessCentrum/beastFitness>
+  a ns0:FtnessCentrum ;
+  ns0:kapacita 300 ;
+  ns0:naAdrese <https://example.org/adresa/praha1> ;
+  ns0:nazevFitnessCentrum "Beast Fitness"@cs .
+
+<https://example.org/clen/Pepa>
+  a ns0:Clen ;
+  ns0:emaily [ ns0:email [ ns0:cs "novak@seznam.cz"^^xsd:string ] ], [ ns0:email [ ns0:cs "pepa.novak.2@gmail.com"^^xsd:string ] ] ;
+  ns0:jeClenem <https://example.org/fitnessCentrum/beastFitness>, <https://example.org/fitnessCentrum/strongGym>, <https://example.org/fitnessCentrum/olympiaFitness>, <https://example.org/fitnessCentrum/powerliftingGym> ;
+  ns0:jmenoClen "Josef Novák"@cs ;
+  ns0:osobniCisloClen 999888764 .
+
+<https://example.org/fitnessCentrum/strongGym>
+  a ns0:FtnessCentrum ;
+  ns0:kapacita 150 ;
+  ns0:naAdrese <https://example.org/adresa/hradec> ;
+  ns0:nazevFitnessCentrum "Strongman Gym HK"@cs .
+
+<https://example.org/fitnessCentrum/olympiaFitness>
+  a ns0:FtnessCentrum ;
+  ns0:kapacita 400 ;
+  ns0:naAdrese <https://example.org/adresa/praha2> ;
+  ns0:nazevFitnessCentrum "Olympia Fitness"@cs .
+
+<https://example.org/fitnessCentrum/powerliftingGym>
+  a ns0:FtnessCentrum ;
+  ns0:kapacita 50 ;
+  ns0:naAdrese <https://example.org/adresa/pardubice> ;
+  ns0:nazevFitnessCentrum "Powerlifting Club Pardubice"@cs .
+
+<https://example.org/clen/David>
+  a ns0:Clen ;
+  ns0:emaily [ ns0:email [ ns0:cs "hrdý@email.cz"^^xsd:string ] ] ;
+  ns0:jeClenem <https://example.org/fitnessCentrum/strongGym> ;
+  ns0:jmenoClen "David Hrdý"@cs ;
+  ns0:osobniCisloClen 123456789 .
+
+<https://example.org/clen/Kuba>
+  a ns0:Clen ;
+  ns0:emaily [ ns0:email [ ns0:cs "polevka@test.cz"^^xsd:string ] ] ;
+  ns0:jeClenem <https://example.org/fitnessCentrum/olympiaFitness> ;
+  ns0:jmenoClen "Jakub Polévka"@cs ;
+  ns0:osobniCisloClen 6565656565 .
+
+<https://example.org/clen/Eva>
+  a ns0:Clen ;
+  ns0:emaily [ ns0:email [ ns0:cs "eva.m@test.cz"^^xsd:string ] ] ;
+  ns0:jeClenem <https://example.org/fitnessCentrum/beastFitness>, <https://example.org/fitnessCentrum/olympiaFitness> ;
+  ns0:jmenoClen "Eva Morávková"@cs ;
+  ns0:osobniCisloClen 876876876 .
+
+<https://example.org/clen/Milos>
+  a ns0:Clen ;
+  ns0:emaily [ ns0:email [ ns0:cs "minovym@test.cz"^^xsd:string ] ] ;
+  ns0:jeClenem <https://example.org/fitnessCentrum/powerliftingGym>, <https://example.org/fitnessCentrum/olympiaFitness> ;
+  ns0:jmenoClen "Miloš Nový"@cs ;
+  ns0:osobniCisloClen 999111999 .
+
+[]
+  ns0:adresy <https://example.org/adresa/praha1>, <https://example.org/adresa/praha2>, <https://example.org/adresa/hradec>, <https://example.org/adresa/pardubice> ;
+  ns0:clenove <https://example.org/clen/Radek>, <https://example.org/clen/Pepa>, <https://example.org/clen/David>, <https://example.org/clen/Kuba>, <https://example.org/clen/Eva>, <https://example.org/clen/Milos> ;
+  ns0:fitnessCentra <https://example.org/fitnessCentrum/beastFitness>, <https://example.org/fitnessCentrum/olympiaFitness>, <https://example.org/fitnessCentrum/strongGym>, <https://example.org/fitnessCentrum/powerliftingGym> .

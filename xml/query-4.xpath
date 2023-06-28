@@ -1,0 +1,3 @@
+(: 2. Vypiš členy, kteří mají alespoň jeden kontaktní email a zároveň jsou zapsáni alespoň ve dvou fitness centrech :)
+
+//clen[count(email) >= 1 and count(jeClenem) >=2]

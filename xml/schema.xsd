@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:ex="http://example.org/xsd"
+           xmlns:xml="http://www.w3.org/XML/1998/namespace"
+           targetNamespace="http://example.org/xsd"
+           elementFormDefault="qualified"
+>
+    <xs:element name="databazeFitnessCenter">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="ex:adresa" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="ex:fitnessCentrum" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="ex:clen" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="adresa">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="iri" type="xs:anyURI"/>
+                <xs:element name="mestoAdresa" xml:lang="cs" type="xs:string"/>
+                <xs:element name="uliceAdresa" xml:lang="cs" type="xs:string"/>
+                <xs:element name="pscAdresa" type="xs:integer"/>
+                <xs:element name="cisloPopisneAdresa" type="xs:integer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="fitnessCentrum">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="iri" type="xs:anyURI"/>
+                <xs:element name="nazevFitnessCentrum" xml:lang="cs" type="xs:string"/>
+                <xs:element name="kapacitaFitnessCentrum" type="xs:positiveInteger"/>
+                <xs:element ref="ex:adresa" minOccurs="1" maxOccurs="1"/>
+                <xs:sequence>
+                    <xs:element name="maClena" minOccurs="0" maxOccurs="unbounded">
+                        <xs:complexType>
+                            <xs:attribute name="clenUri" type="xs:anyURI" />
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="clen">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="iri" type="xs:anyURI"/>
+                <xs:element name="jmenoClen" xml:lang="cs" type="xs:string"/>
+                <xs:element name="osobniCisloClen" type="xs:positiveInteger"/>
+                <xs:sequence>
+                    <xs:element name="email" xml:lang="cs" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+                <xs:sequence>
+                    <xs:element name="jeClenem" minOccurs="1" maxOccurs="unbounded">
+                        <xs:complexType>
+                            <xs:attribute name="fitnessCentrumUri" type="xs:anyURI" use="required"/>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,17 @@
+# Vypiš všechna města společně s ulicemi a PSČ, ve kterých se nachází fitness centra s kapacitou pro více než 100 lidí. Seřaď podle města.
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX ex: <http://example.org/vocabulary/>
+PREFIX instance: <http://example.org/instances/>
+
+SELECT DISTINCT ?mesto ?ulice ?psc WHERE {
+  ?fitko ex:naAdrese ?adresa .
+  ?adresa ex:mestoAdresa ?mesto .
+  ?adresa ex:uliceAdresa ?ulice .
+  ?adresa ex:pscAdresa ?psc .
+  ?fitko ex:kapacitaFitnessCentrum ?kapacita .
+  FILTER (?kapacita > 100) .
+}
+ORDER BY (?mesto)

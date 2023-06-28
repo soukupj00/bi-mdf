@@ -1,0 +1,171 @@
+{
+  "$schema": "http://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/fitness-centra-schema.json",
+  "$title": "FitnessCentra",
+  "type": "object",
+  "properties": {
+    "adresy": {
+      "type": "array",
+      "items": {
+        "title": "adresa",
+        "type": "object",
+        "properties": {
+          "iri": {
+            "type": "string",
+            "format": "iri"
+          },
+          "cisloPopisneAdresa": {
+            "type": "integer"
+          },
+          "mestoAdresa": {
+            "type": "object",
+            "properties": {
+              "cs": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cs"
+            ]
+          },
+          "pscAdresa": {
+            "type": "integer"
+          },
+          "uliceAdresa": {
+            "type": "object",
+            "properties": {
+              "cs": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cs"
+            ]
+          }
+        },
+        "required": [
+          "iri",
+          "cisloPopisneAdresa",
+          "mestoAdresa",
+          "pscAdresa",
+          "uliceAdresa"
+        ]
+      }
+    },
+    "fitnessCentra": {
+      "type": "array",
+      "items": {
+        "title": "fitnessCentrum",
+        "type": "object",
+        "properties": {
+          "iri": {
+            "type": "string",
+            "format": "iri"
+          },
+          "kapacitaFitnessCentrum": {
+            "type": "integer"
+          },
+          "nazevFitnessCentrum": {
+            "type": "object",
+            "properties": {
+              "cs": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cs"
+            ]
+          },
+          "naAdrese": {
+            "type": "object",
+            "properties": {
+              "iri": {
+                "type": "string",
+                "format": "iri"
+              }
+            },
+            "required": [
+              "iri"
+            ]
+          }
+        },
+        "required": [
+          "iri",
+          "kapacitaFitnessCentrum",
+          "nazevFitnessCentrum"
+        ]
+      }
+    },
+    "clenove": {
+      "type": "array",
+      "items": {
+        "title": "clen",
+        "type": "object",
+        "properties": {
+          "iri": {
+            "type": "string",
+            "format": "iri"
+          },
+          "jmenoClen": {
+            "type": "object",
+            "properties": {
+              "cs": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cs"
+            ]
+          },
+          "emaily": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "title": "email",
+              "type": "object",
+              "properties": {
+                "email": {
+                  "type": "object",
+                  "properties": {
+                    "cs": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "cs"
+                  ]
+                }
+              },
+              "required": [
+                "email"
+              ]
+            }
+          },
+          "osobniCisloClen": {
+            "type": "integer"
+          },
+          "jeClenem": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "properties": {
+                "iri": {
+                  "type": "string",
+                  "format": "iri"
+                }
+              }
+            },
+            "required": [
+              "iri"
+            ]
+          }
+        },
+        "required": [
+          "iri",
+          "jmenoClen",
+          "osobniCisloClen"
+        ]
+      }
+    }
+  }
+}

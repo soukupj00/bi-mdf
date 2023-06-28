@@ -1,0 +1,1 @@
+.adresy | map(select(.mestoAdresa.cs != "Praha")) | map({"Město": .mestoAdresa.cs, "Ulice": .uliceAdresa.cs, "Číslo popisné": .cisloPopisneAdresa, "PSČ": .pscAdresa})

@@ -1,0 +1,5 @@
+iri,nazev_fitness_centrum_cs,kapacita_fitness_centrum_cs,na_adrese_iri
+https://example.org/fitnessCentrum/beastFitness,Beast Fitness,300,https://example.org/adresa/praha1
+https://example.org/fitnessCentrum/olympiaFitness,Olympia Fitness,400,https://example.org/adresa/praha2
+https://example.org/fitnessCentrum/strongGym,Strongman Gym HK,150,https://example.org/adresa/hradec
+https://example.org/fitnessCentrum/powerliftingGym,Powerlifting Club Pardubice,50,https://example.org/adresa/pardubice

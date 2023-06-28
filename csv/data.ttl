@@ -1,0 +1,88 @@
+@prefix ns1: <http://example.org/vocabulary/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://example.org/clen/David> a ns1:Clen;
+  ns1:email " hrdý@email.cz"@cs;
+  ns1:jeClenem <https://example.org/fitnessCentrum/strongGym>;
+  ns1:jmenoClen " David Hrdý"@cs;
+  ns1:osobniCisloClen 123456789 .
+
+<https://example.org/clen/Eva> a ns1:Clen;
+  ns1:email " eva.m@test.cz"@cs;
+  ns1:jeClenem <https://example.org/fitnessCentrum/beastFitness>,
+    <https://example.org/fitnessCentrum/olympiaFitness>;
+  ns1:jmenoClen " Eva Morávková"@cs;
+  ns1:osobniCisloClen 876876876 .
+
+<https://example.org/clen/Kuba> a ns1:Clen;
+  ns1:email " polevka@test.cz"@cs;
+  ns1:jeClenem <https://example.org/fitnessCentrum/olympiaFitness>;
+  ns1:jmenoClen " Jakub Polévka"@cs;
+  ns1:osobniCisloClen 6565656565 .
+
+<https://example.org/clen/Milos> a ns1:Clen;
+  ns1:email " minovym@test.cz"@cs;
+  ns1:jeClenem <https://example.org/fitnessCentrum/powerliftingGym>,
+    <https://example.org/fitnessCentrum/olympiaFitness>;
+  ns1:jmenoClen " Miloš Nový"@cs;
+  ns1:osobniCisloClen 999111999 .
+
+<https://example.org/clen/Pepa> a ns1:Clen;
+  ns1:email " novak@seznam.cz"@cs,
+    " pepa.novak.2@gmail.com"@cs;
+  ns1:jeClenem <https://example.org/fitnessCentrum/beastFitness>,
+    <https://example.org/fitnessCentrum/strongGym>,
+    <https://example.org/fitnessCentrum/olympiaFitness>,
+    <https://example.org/fitnessCentrum/powerliftingGym>;
+  ns1:jmenoClen " Josef Novák"@cs;
+  ns1:osobniCisloClen 999888764 .
+
+<https://example.org/clen/Radek> a ns1:Clen;
+  ns1:jeClenem <https://example.org/fitnessCentrum/beastFitness>;
+  ns1:jmenoClen " Radek Pospisil"@cs;
+  ns1:osobniCisloClen 123456123 .
+
+<https://example.org/adresa/hradec> a ns1:Clen;
+  ns1:cisloPopisneAdresa 1123;
+  ns1:mestoAdresa " Hradec Králové"@cs;
+  ns1:pscAdresa 55506;
+  ns1:uliceAdresa " Nádražní"@cs .
+
+<https://example.org/adresa/pardubice> a ns1:Clen;
+  ns1:cisloPopisneAdresa 9623;
+  ns1:mestoAdresa " Pardubice"@cs;
+  ns1:pscAdresa 50802;
+  ns1:uliceAdresa " Pardubická"@cs .
+
+<https://example.org/adresa/praha1> a ns1:Clen;
+  ns1:cisloPopisneAdresa 99;
+  ns1:mestoAdresa " Praha"@cs;
+  ns1:pscAdresa 10001;
+  ns1:uliceAdresa " Hradecká"@cs .
+
+<https://example.org/adresa/praha2> a ns1:Clen;
+  ns1:cisloPopisneAdresa 876;
+  ns1:mestoAdresa " Praha"@cs;
+  ns1:pscAdresa 10099;
+  ns1:uliceAdresa " Pražská"@cs .
+
+<https://example.org/fitnessCentrum/powerliftingGym> a ns1:FitnessCentrum;
+  ns1:kapacitaFitnessCentrum 50;
+  ns1:naAdrese <https://example.org/adresa/pardubice>;
+  ns1:nazevFitnessCentrum " Powerlifting Club Pardubice"@cs .
+
+<https://example.org/fitnessCentrum/strongGym> a ns1:FitnessCentrum;
+  ns1:kapacitaFitnessCentrum 150;
+  ns1:naAdrese <https://example.org/adresa/hradec>;
+  ns1:nazevFitnessCentrum " Strongman Gym HK"@cs .
+
+<https://example.org/fitnessCentrum/beastFitness> a ns1:FitnessCentrum;
+  ns1:kapacitaFitnessCentrum 300;
+  ns1:naAdrese <https://example.org/adresa/praha1>;
+  ns1:nazevFitnessCentrum " Beast Fitness"@cs .
+
+<https://example.org/fitnessCentrum/olympiaFitness> a ns1:FitnessCentrum;
+  ns1:kapacitaFitnessCentrum 400;
+  ns1:naAdrese <https://example.org/adresa/praha2>;
+  ns1:nazevFitnessCentrum " Olympia Fitness"@cs .

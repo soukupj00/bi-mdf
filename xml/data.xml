@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databazeFitnessCenter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                       xsi:schemaLocation="http://example.org/xml schema.xsd"
+                       xmlns="http://example.org/xsd">
+
+    <!-- Fitness centra -->
+    <fitnessCentrum>
+        <iri>https://example.org/fitnessCentrum/beastFitness</iri>
+        <nazevFitnessCentrum>Beast Fitness</nazevFitnessCentrum>
+        <kapacitaFitnessCentrum>300</kapacitaFitnessCentrum>
+        <adresa>
+            <iri>https://example.org/adresa/praha1</iri>
+            <mestoAdresa>Praha</mestoAdresa>
+            <uliceAdresa>Hradecká</uliceAdresa>
+            <pscAdresa>10001</pscAdresa>
+            <cisloPopisneAdresa>99</cisloPopisneAdresa>
+        </adresa>
+        <maClena clenUri="https://example.org/clen/Radek"/>
+        <maClena clenUri="https://example.org/clen/Pepa"/>
+        <maClena clenUri="https://example.org/clen/Eva"/>
+    </fitnessCentrum>
+    <fitnessCentrum>
+        <iri>https://example.org/fitnessCentrum/olympiaFitness</iri>
+        <nazevFitnessCentrum>Olympia Fitness</nazevFitnessCentrum>
+        <kapacitaFitnessCentrum>400</kapacitaFitnessCentrum>
+        <adresa>
+            <iri>https://example.org/adresa/praha2</iri>
+            <mestoAdresa>Praha</mestoAdresa>
+            <uliceAdresa>Pražská</uliceAdresa>
+            <pscAdresa>10099</pscAdresa>
+            <cisloPopisneAdresa>876</cisloPopisneAdresa>
+        </adresa>
+        <maClena clenUri="https://example.org/clen/Pepa"/>
+        <maClena clenUri="https://example.org/clen/Kuba"/>
+        <maClena clenUri="https://example.org/clen/Eva"/>
+        <maClena clenUri="https://example.org/clen/Milos"/>
+    </fitnessCentrum>
+    <fitnessCentrum>
+        <iri>https://example.org/fitnessCentrum/strongGym</iri>
+        <nazevFitnessCentrum>Strongman Gym HK</nazevFitnessCentrum>
+        <kapacitaFitnessCentrum>150</kapacitaFitnessCentrum>
+        <adresa>
+            <iri>https://example.org/adresa/hradec</iri>
+            <mestoAdresa>Hradec Králové</mestoAdresa>
+            <uliceAdresa>Nádražní</uliceAdresa>
+            <pscAdresa>55506</pscAdresa>
+            <cisloPopisneAdresa>1123</cisloPopisneAdresa>
+        </adresa>
+        <maClena clenUri="https://example.org/clen/Pepa"/>
+        <maClena clenUri="https://example.org/clen/David"/>
+    </fitnessCentrum>
+    <fitnessCentrum>
+        <iri>https://example.org/fitnessCentrum/powerliftingGym</iri>
+        <nazevFitnessCentrum>Powerlifting Club Pardubice</nazevFitnessCentrum>
+        <kapacitaFitnessCentrum>50</kapacitaFitnessCentrum>
+        <adresa>
+            <iri>https://example.org/adresa/pardubice</iri>
+            <mestoAdresa>Pardubice</mestoAdresa>
+            <uliceAdresa>Pardubická</uliceAdresa>
+            <pscAdresa>50802</pscAdresa>
+            <cisloPopisneAdresa>9623</cisloPopisneAdresa>
+        </adresa>
+        <maClena clenUri="https://example.org/clen/Pepa"/>
+        <maClena clenUri="https://example.org/clen/Milos"/>
+    </fitnessCentrum>
+
+    <!-- Clenove -->
+    <clen>
+        <iri>https://example.org/clen/Radek</iri>
+        <jmenoClen>Radek Pospisil</jmenoClen>
+        <osobniCisloClen>123456123</osobniCisloClen>
+        <jeClenem fitnessCentrumUri="https://example.org/fitnessCentrum/beastFitness"/>
+    </clen>
+    <clen>
+        <iri>https://example.org/clen/Pepa</iri>
+        <jmenoClen>Josef Novák</jmenoClen>
+        <osobniCisloClen>999888764</osobniCisloClen>
+        <email>novak@seznam.cz</email>
+        <email>pepa.novak.2@gmail.com</email>
+        <jeClenem fitnessCentrumUri="https://example.org/fitnessCentrum/beastFitness"/>
+        <jeClenem fitnessCentrumUri="https://example.org/fitnessCentrum/olympiaFitness"/>
+        <jeClenem fitnessCentrumUri="https://example.org/fitnessCentrum/strongGym"/>
+        <jeClenem fitnessCentrumUri="https://example.org/fitnessCentrum/powerliftingGym"/>
+    </clen>
+    <clen>
+        <iri>https://example.org/clen/David</iri>
+        <jmenoClen>David Hrdý</jmenoClen>
+        <osobniCisloClen>123456789</osobniCisloClen>
+        <email>hrdý@email.cz</email>
+        <jeClenem fitnessCentrumUri="https://example.org/fitnessCentrum/strongGym"/>
+    </clen>
+    <clen>
+        <iri>https://example.org/clen/Kuba</iri>
+        <jmenoClen>Jakub Polévka</jmenoClen>
+        <osobniCisloClen>6565656565</osobniCisloClen>
+        <email>polevka@test.cz</email>
+        <jeClenem fitnessCentrumUri="https://example.org/fitnessCentrum/olympiaFitness"/>
+    </clen>
+    <clen>
+        <iri>https://example.org/clen/Eva</iri>
+        <jmenoClen>Eva Morávková</jmenoClen>
+        <osobniCisloClen>876876876</osobniCisloClen>
+        <email>eva.m@test.cz</email>
+        <jeClenem fitnessCentrumUri="https://example.org/fitnessCentrum/beastFitness"/>
+        <jeClenem fitnessCentrumUri="https://example.org/fitnessCentrum/olympiaFitness"/>
+    </clen>
+    <clen>
+        <iri>https://example.org/clen/Milos</iri>
+        <jmenoClen>Miloš Nový</jmenoClen>
+        <osobniCisloClen>999111999</osobniCisloClen>
+        <email>minovym@test.cz</email>
+        <jeClenem fitnessCentrumUri="https://example.org/fitnessCentrum/olympiaFitness"/>
+        <jeClenem fitnessCentrumUri="https://example.org/fitnessCentrum/powerliftingGym"/>
+    </clen>
+</databazeFitnessCenter>

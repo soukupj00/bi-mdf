@@ -1,0 +1,3 @@
+(: Vypiš všechna města společně s ulicemi a PSČ, ve kterých se nachází fitness centra s kapacitou pro více než 100 lidí. :)
+
+//fitnessCentrum[kapacitaFitnessCentrum > 100]/adresa

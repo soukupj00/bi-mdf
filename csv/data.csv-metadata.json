@@ -1,0 +1,253 @@
+{
+  "@context": [
+    "http://www.w3.org/ns/csvw",
+    {
+      "@language": "cs"
+    }
+  ],
+  "@type": "TableGroup",
+  "@id": "https://example.org/metadata.json",
+  "dc:description": "Databáze fitness center",
+  "tables": [
+    {
+      "@id": "https://example.org/adresy.csv-metadata.json",
+      "@type": "Table",
+      "url": "adresy.csv",
+      "tableSchema": {
+        "@type": "Schema",
+        "aboutUrl": "{+iri}",
+        "columns": [
+          {
+            "@type": "Column",
+            "name": "iri",
+            "titles": "iri",
+            "dc:description": "IRI adresy",
+            "required": true,
+            "datatype": "anyURI",
+            "propertyUrl": "rdf:type",
+            "valueUrl": "http://example.org/vocabulary/Clen"
+          },
+          {
+            "@type": "Column",
+            "name": "mesto_adresa_cs",
+            "titles": "mesto_adresa_cs",
+            "dc:description": "Město",
+            "required": true,
+            "datatype": "string",
+            "lang": "cs",
+            "propertyUrl": "http://example.org/vocabulary/mestoAdresa"
+          },
+          {
+            "@type": "Column",
+            "name": "ulice_adresa_cs",
+            "titles": "ulice_adresa_cs",
+            "dc:description": "Ulice",
+            "required": true,
+            "datatype": "string",
+            "lang": "cs",
+            "propertyUrl": "http://example.org/vocabulary/uliceAdresa"
+          },
+          {
+            "@type": "Column",
+            "name": "psc_adresa_cs",
+            "titles": "psc_adresa_cs",
+            "dc:description": "Poštovní směrovací číslo",
+            "required": true,
+            "datatype": "integer",
+            "propertyUrl": "http://example.org/vocabulary/pscAdresa"
+          },
+          {
+            "@type": "Column",
+            "name": "cislo_popisne_adresa_cs",
+            "titles": "cislo_popisne_adresa_cs",
+            "dc:description": "Popisné číslo budovy",
+            "required": true,
+            "datatype": "integer",
+            "propertyUrl": "http://example.org/vocabulary/cisloPopisneAdresa"
+          }
+        ],
+        "primaryKey": "iri"
+      }
+    },
+    {
+      "@id": "https://example.org/fitnessCentra.csv-metadata.json",
+      "@type": "Table",
+      "url": "fitness_centra.csv",
+      "tableSchema": {
+        "@type": "Schema",
+        "aboutUrl": "{+iri}",
+        "columns": [
+          {
+            "@type": "Column",
+            "name": "iri",
+            "titles": "iri",
+            "dc:description": "IRI fitness centra",
+            "required": true,
+            "datatype": "anyURI",
+            "propertyUrl": "rdf:type",
+            "valueUrl": "http://example.org/vocabulary/FitnessCentrum"
+          },
+          {
+            "@type": "Column",
+            "name": "nazev_fitness_centrum_cs",
+            "titles": "nazev_fitness_centrum_cs",
+            "dc:description": "Název fitness centra",
+            "required": true,
+            "datatype": "string",
+            "lang": "cs",
+            "propertyUrl": "http://example.org/vocabulary/nazevFitnessCentrum"
+          },
+          {
+            "@type": "Column",
+            "name": "kapacita_fitness_centrum_cs",
+            "titles": "kapacita_fitness_centrum_cs",
+            "dc:description": "Kapacita fitness centra",
+            "required": true,
+            "datatype": "integer",
+            "propertyUrl": "http://example.org/vocabulary/kapacitaFitnessCentrum"
+          },
+          {
+            "@type": "Column",
+            "name": "na_adrese_iri",
+            "titles": "na_adrese_iri",
+            "dc:description": "IRI adresy, na které se fitness centrum nachází",
+            "datatype": "anyURI",
+            "propertyUrl": "http://example.org/vocabulary/naAdrese",
+            "valueUrl": "{+na_adrese_iri}"
+          }
+        ],
+        "primaryKey": "iri"
+      }
+    },
+    {
+      "@id": "https://example.org/clenove.csv-metadata.json",
+      "@type": "Table",
+      "url": "clenove.csv",
+      "tableSchema": {
+        "@type": "Schema",
+        "aboutUrl": "{+iri}",
+        "columns": [
+          {
+            "@type": "Column",
+            "name": "iri",
+            "titles": "iri",
+            "dc:description": "IRI člena",
+            "required": true,
+            "datatype": "anyURI",
+            "propertyUrl": "rdf:type",
+            "valueUrl": "http://example.org/vocabulary/Clen"
+          },
+          {
+            "@type": "Column",
+            "name": "jmeno_clen_cs",
+            "titles": "jmeno_clen_cs",
+            "dc:description": "Jméno člena",
+            "required": true,
+            "datatype": "string",
+            "lang": "cs",
+            "propertyUrl": "http://example.org/vocabulary/jmenoClen"
+          },
+          {
+            "@type": "Column",
+            "name": "osobni_cislo_clen_cs",
+            "titles": "osobni_cislo_clen_cs",
+            "dc:description": "Osobní číslo člena",
+            "required": true,
+            "datatype": "integer",
+            "propertyUrl": "http://example.org/vocabulary/osobniCisloClen"
+          }
+        ],
+        "primaryKey": "iri"
+      }
+    },
+    {
+      "@id": "https://example.org/emaily.csv-metadata.json",
+      "@type": "Table",
+      "url": "emaily.csv",
+      "tableSchema": {
+        "@type": "Schema",
+        "aboutUrl": "{+clen_iri}",
+        "columns": [
+          {
+            "@type": "Column",
+            "name": "clen_iri",
+            "titles": "clen_iri",
+            "dc:description": "IRI člena",
+            "required": true,
+            "datatype": "anyURI",
+            "propertyUrl": "rdf:type",
+            "valueUrl": "http://example.org/vocabulary/Clen"
+          },
+          {
+            "@type": "Column",
+            "name": "email_clen_cs",
+            "titles": "email_clen_cs",
+            "dc:description": "Email člena",
+            "required": true,
+            "datatype": "string",
+            "lang": "cs",
+            "propertyUrl": "http://example.org/vocabulary/email"
+          }
+        ],
+        "primaryKey": "clen_iri",
+        "foreignKeys": [
+          {
+            "columnReference": "clen_iri",
+            "reference": {
+              "resource": "clenove.csv",
+              "columnReference": "iri"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@id": "https://example.org/clen-fitness_centrum.csv-metadata.json",
+      "@type": "Table",
+      "url": "clen-fitness_centrum.csv",
+      "tableSchema": {
+        "@type": "Schema",
+        "aboutUrl": "{+clen_iri}",
+        "columns": [
+          {
+            "@type": "Column",
+            "name": "clen_iri",
+            "titles": "clen_iri",
+            "dc:description": "IRI člena",
+            "required": true,
+            "datatype": "anyURI",
+            "propertyUrl": "rdf:type",
+            "valueUrl": "http://example.org/vocabulary/Clen"
+          },
+          {
+            "@type": "Column",
+            "name": "fitness_centrum_iri",
+            "titles": "fitness_centrum_iri",
+            "dc:description": "IRI fitness centra, ve kterém je člen zapsán",
+            "required": true,
+            "datatype": "anyURI",
+            "propertyUrl": "http://example.org/vocabulary/jeClenem",
+            "valueUrl": "{+fitness_centrum_iri}"
+          }
+        ],
+        "primaryKey": "clen_iri",
+        "foreignKeys": [
+          {
+            "columnReference": "clen_iri",
+            "reference": {
+              "resource": "clenove.csv",
+              "columnReference": "iri"
+            }
+          },
+          {
+            "columnReference": "fitness_centrum_iri",
+            "reference": {
+              "resource": "fitness_centra.csv",
+              "columnReference": "iri"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

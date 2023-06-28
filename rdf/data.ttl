@@ -1,0 +1,166 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+@prefix ex: <http://example.org/vocabulary/> .
+@prefix instance: <http://example.org/instances/> .
+
+#--------------------Classes--------------------#
+
+#---------------Clen---------------#
+ex:Clen a rdfs:Class ;
+    rdfs:label "Člen"@cs .
+
+ex:jmenoClen a rdf:Property ;
+    rdfs:label "Jméno"@cs ;
+    rdfs:comment "Jméno člena"@cs ;
+    rdfs:domain ex:Clen ;
+    rdfs:range rdf:langString .
+
+ex:osobniCisloClen a rdf:Property ;
+    rdfs:label "Osobní číslo"@cs ;
+    rdfs:comment "Osobní číslo člena přiděleno systémem"@cs ;
+    rdfs:domain ex:Clen ;
+    rdfs:range rdf:nonNegativeInteger .
+
+ex:emailClen a rdf:Property ;
+    rdfs:label "E-mail"@cs ;
+    rdfs:comment "Email člena"@cs ;
+    rdfs:domain ex:Clen ;
+    rdfs:range xsd:anyURI .
+
+ex:jeClenem a rdf:property ;
+    rdfs:label "Je členem"@cs ;
+    rdfs:domain ex:Clen ;
+    rdfs:range ex:FitnessCentrum .
+
+#---------------FitnessCentrum---------------#
+ex:FitnessCentrum a rdfs:Class ;
+	rdfs:label "Fitness centrum"@cs .
+
+ex:nazevFitnessCentrum a rdf:Property ;
+    rdfs:label "Název"@cs ;
+    rdfs:comment "Název fitness centra"@cs ;
+    rdfs:domain ex:FitnessCentrum ;
+    rdfs:range rdf:langString .
+
+ex:kapacitaFitnessCentrum a rdf:Property ;
+    rdfs:label "Kapacita"@cs ;
+    rdfs:comment "Kapacita fitness centra"@cs ;
+    rdfs:domain ex:FitnessCentrum ;
+    rdfs:range rdf:nonNegativeInteger .
+
+ex:naAdrese a rdf:Property ;
+    rdfs:label "Nachází se"@cs ;
+    rdfs:comment "Vazba s adresou, na které se fitness centrum nachází"@cs ;
+    rdfs:domain ex:FitnessCentrum ;
+    rdfs:range ex:Adresa .
+
+#---------------Adresa---------------#
+ex:Adresa a rdfs:Class ;
+	rdfs:label "Adresa"@cs .
+
+ex:mestoAdresa a rdf:Property ;
+    rdfs:label "Město"@cs ;
+    rdfs:comment "Název města"@cs ;
+    rdfs:domain ex:Adresa ;
+    rdfs:range rdf:langString .
+
+ex:uliceAdresa a rdf:Property ;
+    rdfs:label "Ulice"@cs ;
+    rdfs:comment "Název ulice"@cs ;
+    rdfs:domain ex:Adresa ;
+    rdfs:range rdf:langString .
+
+ex:pscAdresa a rdf:Property ;
+    rdfs:label "PSČ"@cs ;
+    rdfs:comment "Poštovní směrovací číslo"@cs ;
+    rdfs:domain ex:Adresa ;
+    rdfs:range rdf:nonNegativeInteger .
+
+ex:cisloPopisneAdresa a rdf:Property ;
+    rdfs:label "Číslo popisné"@cs ;
+    rdfs:comment "Popisné číslo budovy"@cs ;
+    rdfs:domain ex:Adresa ;
+    rdfs:range rdf:nonNegativeInteger .
+
+#--------------------Instance--------------------#
+
+instance:Praha a ex:Adresa ;
+    ex:mestoAdresa "Praha"@cs ;
+    ex:uliceAdresa "Hradecká"@cs ;
+    ex:pscAdresa 10001 ;
+    ex:cisloPopisneAdresa 99 .
+
+instance:Praha_2 a ex:Adresa ;
+    ex:mestoAdresa "Praha"@cs ;
+    ex:uliceAdresa "Pražská"@cs ;
+    ex:pscAdresa 10099 ;
+    ex:cisloPopisneAdresa 876 .
+
+instance:Hradec a ex:Adresa ;
+    ex:mestoAdresa "Hradec Králové"@cs ;
+    ex:uliceAdresa "Nádražní"@cs ;
+    ex:pscAdresa 55506 ;
+    ex:cisloPopisneAdresa 1123 .
+
+instance:Pardubice a ex:Adresa ;
+    ex:mestoAdresa "Pardubice"@cs ;
+    ex:uliceAdresa "Pardubická"@cs ;
+    ex:pscAdresa 50802 ;
+    ex:cisloPopisneAdresa 9623 .
+
+instance:BeastFitness a ex:FitnessCentrum ;
+    ex:nazevFitnessCentrum "Beast Fitness"@cs ;
+    ex:kapacitaFitnessCentrum 300 ;
+    ex:naAdrese instance:Praha .
+
+instance:OlympiaFitness a ex:FitnessCentrum ;
+    ex:nazevFitnessCentrum "Olympia Fitness"@cs ;
+    ex:kapacitaFitnessCentrum 400 ;
+    ex:naAdrese instance:Praha_2  .
+
+instance:StrongGym a ex:FitnessCentrum ;
+    ex:nazevFitnessCentrum "Strongman Gym HK"@cs ;
+    ex:kapacitaFitnessCentrum 150 ;
+    ex:naAdrese instance:Hradec .
+
+instance:PowerliftingGym a ex:FitnessCentrum ;
+    ex:nazevFitnessCentrum "Powerlifting Club Pardubice"@cs ;
+    ex:kapacitaFitnessCentrum 50 ;
+    ex:naAdrese instance:Pardubice  .
+
+instance:Radek a ex:Clen ;
+    ex:jmenoClen "Radek Pospisil"@cs ;
+    ex:osobniCisloClen 123456123 ;
+    ex:jeClenem instance:BeastFitness .
+
+instance:Pepa a ex:Clen ;
+    ex:jmenoClen "Josef Novák"@cs ;
+    ex:emailClen <mailto:novak@seznam.cz>, <mailto:pepa.novak.2@gmail.com> ;
+    ex:osobniCisloClen 999888764 ;
+    ex:jeClenem instance:BeastFitness, instance:StrongGym , instance:OlympiaFitness , instance:PowerliftingGym .
+
+instance:David a ex:Clen ;
+    ex:jmenoClen "David Hrdý"@cs ;
+    ex:emailClen <mailto:hrdý@email.cz> ;
+    ex:osobniCisloClen 123456789 ;
+    ex:jeClenem instance:StrongGym .
+
+instance:Kuba a ex:Clen ;
+    ex:jmenoClen "Jakub Polévka"@cs ;
+    ex:emailClen <mailto:polevka@test.cz> ;
+    ex:osobniCisloClen 6565656565 ;
+    ex:jeClenem instance:OlympiaFitness .
+
+instance:Eva a ex:Clen ;
+    ex:jmenoClen "Eva Morávková"@cs ;
+    ex:emailClen <mailto:eva.m@test.cz> ;
+    ex:osobniCisloClen 876876876 ;
+    ex:jeClenem instance:BeastFitness, instance:OlympiaFitness .
+
+instance:Milos a ex:Clen ;
+    ex:jmenoClen "Miloš Nový"@cs ;
+    ex:emailClen <mailto:minovym@test.cz> ;
+    ex:osobniCisloClen 999111999 ;
+    ex:jeClenem instance:OlympiaFitness , instance:PowerliftingGym .

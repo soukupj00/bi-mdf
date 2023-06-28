@@ -1,0 +1,1 @@
+.clenove | map(select(.emaily != null)) | map({"Jméno": .jmenoClen.cs, "OsobniCislo": .osobniCisloClen, "Emaily": .emaily})

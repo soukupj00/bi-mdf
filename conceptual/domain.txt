@@ -1,0 +1,92 @@
+﻿1. Přehled
+
+Účel domény je sledování fitness center a jejich členů. Člen může mít jeden i více emailů, jméno a své přiřazené osobní číslo. Osoba se může stát členem ve vícero fitness centrech. Fitness centrum musí být na specifikované adrese. Na jedné adrese se může nacházet maximálně jedno fitness centrum (hluk, konkurence, zátěž na budovu, povolení,...).
+
+2. Specifikace
+ V této sekci jsou definovány jednotlivé třídy a jejich vlastnosti potřebné pro popis fitness center. Pro každou vlastnost je uveden její identifikátor, který je pro její reprezentaci použit ve všech datových formátech, její název, datový typ, popis a příklad.
+
+2.1. Fitness centrum
+
+2.1.1. Název
+        1. Vlastnost: nazev
+        2. Typ: text
+        3. Jméno: Název
+        4. Popis: Název fitness centra
+        5. Příklad: Beast Fitness
+
+2.1.2. Kapacita
+	1. Vlastnost: kapacita
+	2. Typ: číslo
+	3. Jméno: Kapacita
+	4. Popis: Kapacita fitness centra
+	5. Příklad: 250
+
+2.1.3. Vazba: Člen
+	1. Vazba: je_clenem
+	2. Typ: Clen
+	3. Jméno: Je členem
+	4. Popis: 
+		Fitness centrum, ve kterém je subjekt členem. 
+	Člen musí být vždy zapsán alespoň v jednom fitness centru, může být členem více fitness center.
+	Fitness centrum může mít nula až neomezený počet členů.
+
+2.1.4. Vazba: Na adrese
+        1. Vazba: na_adrese
+        2. Typ: Adresa
+        3. Jméno: Na adrese
+        4. Popis: 
+		Adresa, na které se fitness centrum nachází.
+	Na jedné adrese se smí nacházet pouze jedno fitness centum, nebo žádné – technické důvody budov (např. Zatížení poschodí, hluková omezení,..), z hlediska finančních pro jednotlivá fitness centra. Fitness centrum se vždy nachází na pouze jedné adrese.
+
+2.2. Člen
+
+2.2.1. Jméno
+	1. Vlastnost: jmeno
+	2. Typ: text
+	3. Jméno: Jméno
+	4. Popis: Celé jméno člena fitness centra
+	5. Příklad: Pepa Novák
+
+2.2.2. Osobní číslo
+	1. Vlastnost: osobni_cislo
+	2. Typ: číslo
+	3. Jméno: Osobní číslo
+	4. Popis: Osobní číslo člena, unikátní, díky němu se dokáže prokázat v daném fitness centru
+	5. Příklad: 987987123
+
+2.2.3. E-mail
+	1. Vlastnost: email
+	2. Typ: text
+	3. Jméno: E-mail
+	4. Popis: Kontaktní emailové adresy člena fitness centra. Může jich mít zadaných více
+	5. Příklad: pepa.novak@seznam.cz, pepa.novak1980@outlook.com
+
+2.3. Adresa
+
+2.3.1. Město
+	1. Vlastnost: mesto
+	2. Typ: text
+	3. Jméno: Město
+	4. Popis: Město dané adresy
+	5. Příklad: Praha
+
+2.3.2. Ulice
+	1. Vlastnost: ulice
+	2. Typ: text
+	3. Jméno: Ulice
+	4. Popis: Ulice dané adresy
+	5. Příklad: Hradecká
+
+2.3.3. PSČ
+	1. Vlastnost: psc
+	2. Typ: číslo
+	3. Jméno: PSČ
+	4. Popis: Poštovní směrovací číslo dané adresy
+	5. Příklad: 506 01
+
+2.3.4. Číslo popisné
+	1. Vlastnost: cislo_popisne
+	2. Typ: číslo
+	3. Jméno: Číslo popisné
+	4. Popis: Popisné číslo budovy dané adresy
+	5. Příklad: 456

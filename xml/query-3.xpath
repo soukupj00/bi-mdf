@@ -1,0 +1,3 @@
+(: Vypiš členy fitness center, která se nachází ve městě Hradec Králové a zároveň mají kapacitu alespoň pro 50 lidí. :)
+
+//clen[iri = //fitnessCentrum[kapacitaFitnessCentrum >= 50]/adresa[fn:contains(iri, "hradec")]/../maClena/@clenUri]

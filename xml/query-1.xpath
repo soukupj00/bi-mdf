@@ -1,0 +1,3 @@
+(: Existuje fitness centrum s kapacitou alespoň pro 100 lidí, které se nachází v Pardubicích? :)
+
+boolean(//fitnessCentrum[kapacitaFitnessCentrum >= 100]/adresa[fn:contains(iri, "pardubice")])
